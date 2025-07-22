@@ -12,14 +12,23 @@ entertainment_budget = int(input("Monthly entertainment budget: "))
 emergency_fund_percent = float(input("Percentage to save for emergency: "))
 investment_percent = float(input("Percentage to invest: "))
 
-emergency_fund = emergency_fund_percent ÷ 100
-investment = investment_percent ÷ 100
+# คำนวณเปอร์เซ็นต์
+emergency_fund_rate = emergency_fund_percent / 100
+investment_rate = investment_percent / 100
+# คำนวณค่าใช้จ่าย
+total_fixed_expenses = rent_cost + transportation_cost
+total_variable_expenses = food_budget + entertainment_budget
+total_expenses = total_fixed_expenses + total_variable_expenses
+# รายได้คงเหลือ
+remaining_income = monthly_income - total_expenses
+# การออมและการลงทุน
+emergency_fund_amount = monthly_income * emergency_fund_rate
+investment_amount = monthly_income * investment_rate
+available_for_savings = remaining_income - emergency_fund_amount - investment_amount
+# สัดส่วนค่าใช้จ่าย
+expense_ratio = (total_expenses / monthly_income) * 100
 
-Total_Fixed_Expenses = rent_cost + transportation_cost
-Total_Variable_Expenses = food_budget + entertainment_budget
-Total Expenses = fixed + variable_expenses
-Remaining Income = monthly_income - total expenses
-Emergency_Fund_Amount = monthly_income × (emergency_fund_percent ÷ 100)
-Investment_Amount = monthly_income × (investment_percent ÷ 100)
-Available_For_Savings = remaining_income - emergency_fund - investment
-Expense_Ratio = (total_expenses ÷ income) × 100
+print("=== MONTHLY BUDGET REPORT ===")
+print(f"Income: {monthly_income} THB")
+print(f"Fixed Expenses: {total_fixed_expenses} THB")
+
