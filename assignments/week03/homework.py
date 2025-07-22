@@ -1,5 +1,0 @@
-monthly_income = float(input("User's monthly income in THB : "))
-rent_cost = float(input("Monthly rent/housing cost : "))
-transportation_cost = float(input("Monthly transportation expenses : "))
-entertainment_budget = int(input("Monthly entertainment budget : "))
-emergency_fund_percent = float(input("Percentage to save for emergency : "))
