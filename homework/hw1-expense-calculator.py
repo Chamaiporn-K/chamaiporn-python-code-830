@@ -1,7 +1,7 @@
 """
 Personal Finance Calculator
 Student: [Chamaiporn konglae]
-Date: [Today's Date]
+Date: [23/07/2568]
 Purpose: Calculate monthly budget and savings
 """
 monthly_income = float(input("User's monthly income in THB: "))
