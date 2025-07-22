@@ -14,13 +14,3 @@ for number in range(2,10) :
         print("The number "+str(number)+" is odd")
     number = number+1
 
-
-rows = int(input("Enter the rows:"))  
-i=0
-while i <= rows:  
-    j=0
-    while j < i:  
-        print("*",end = '')  
-        j+=1
-    print()
-    i+=1
