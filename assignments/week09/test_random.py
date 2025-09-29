@@ -1,7 +1,19 @@
 import random
 
 def test_random():
-    random_number = random.randint(1, 100)
+    random_number = random.randint(1, 10)
+
+    guess_number = input("what is your guess number?: ")
+    guess_number = int(guess_number)
+    
+    if guess_number == random_number:
+        print("Congratulation")
+    elif random_number < guess_number:
+        print("Too much")
+    elif random_number > guess_number:
+        print("Too low")
+    
     print(random_number)
     
+
 test_random()

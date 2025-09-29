@@ -58,8 +58,36 @@ def get_divisibility_hint(number):
 
 def get_range_hint(number, current_min=1, current_max=100):
     # Return narrowed range around the number
-    pass
+    current_min = number - 12
+    current_max = number + 12
+    if current_max > 100:
+        current_max = 100
+    if current_min < 0:
+        current_min = 0
+    return f"HINT: The number in range {current_min} to {current_max}."
 
 def get_thefirst_digit_hint(number):
     # Retun the first digit of the number
-    pass
+    first_digit = number // 10
+    return f"first digit of number is { first_digit}"
+
+random_number = random.randint(1,100)
+attemp =1
+while True:
+    guess_number = int(input(f"Attemp {attemp} -Enter your guess:"))
+    if guess_number == random_number:
+        print(f"Congratulation! you won in {attemp} Attempts")
+        break
+    elif random_number < guess_number:
+        print("Too much! Try again")
+    elif random_number > guess_number:
+        print("Too low! Try again")
+    if attemp == 3:
+        print(get_parity_hint(random_number))
+    elif attemp == 5:
+        print(get_divisibility_hint(random_number))
+    elif attemp ==7:
+        print(get_range_hint(random_number))
+    elif attemp ==10:
+        print(get_thefirst_digit_hint(random_number))
+    attemp = attemp +1
